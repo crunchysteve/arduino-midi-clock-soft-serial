@@ -1,5 +1,10 @@
 # Arduino MIDI clock with tap tempo
 
+### Forker's Note
+*A fork that has been modified to use SoftwareSerial.h, allowing it to run on Arduino Uno or Nano. MIDI In/Out are
+on pins 6 and 7, respectively. This modification is not yet hardware tested but does compile.*
+
+### Original Readme
 As seen on LittleBits:
 https://classroom.littlebits.com/inventions/littlebits-arduino-midi-master-clock-with-tap-tempo
 

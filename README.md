@@ -9,6 +9,8 @@ to an old LCD128x64 display I have left over from a dead Tronxy 3D printer. This
 used as a MIDI logger/recorder by looping the MIDI out from the last device back to the clock's input. This last 
 feature may just be scope creep, so no promises there.*
 
+**Italics below** *indicate changes I'll be making or are already made.*
+
 ### Original Readme
 As seen on LittleBits:
 https://classroom.littlebits.com/inventions/littlebits-arduino-midi-master-clock-with-tap-tempo
@@ -41,20 +43,21 @@ Connect a button to D2
 - After the last tap, clock tempo will be updated and MIDI clock signal will send new BPM
 
 ### Features:
-- **MIDI clock output** on pin D1 TX
+- **MIDI clock output** on *pin D7 TX*
 - **Tap tempo** input
-- **Dimmer input** when a dimmer is connected to A0 to set the tempo by twisting the knob!
-- Tempo blinking **LED** on pin 5
-- Sync signal on pin 9 (for example to sync with Korg Monotribe...)
+- **Dimmer input** when a dimmer is connected to A0 to set the tempo by twisting the knob! *(Intention is to change to a rotary encoder.)*
+- Tempo blinking **LED** on *pin 13*
+- Sync signal on pin 9 (for example to sync with *DIN24/48*...)
 - **MIDI real-time start/stop** is sent when button press is detected on A1 port
 - **BPM storage in EEPROM** and restores it on power up
-- **MIDI forwarding** if a MIDI input is present on pin D0 RX
-- Output of the BPM to a TM1637 **LED display**
+- **MIDI forwarding** if a MIDI input is present on *pin D6* RX
+- Output of the BPM to a TM1637 **LED display** *(Planning to create some alternate display versions)*
 
 # Branches
 
-- master: Code for the Arduino Leonardo (or LittleBits Arduino)
-- arduino-uno: Code for Arduino Uno and compatible devices (D0/D1 RX/TX pins are used for MIDI in/out, so no debug console!)
-- olimex-midi-shield: Based on the arduino-uno branch, but with some tweaks to make the code work better with the Olimex MIDI shield (https://www.olimex.com/Products/Duino/Shields/SHIELD-MIDI/open-source-hardware) (Work in progress!)
+- master: Code for the *Arduino Uno/Nano rather than Leonardo*
+- arduino-uno: Code for Arduino Uno and compatible devices *(D6/D7 RX/TX pins are used for MIDI in/out, via SoftwareSerial.h, allowing debug console!)*
+- For this version, because D6 and D7 are now the MIDI pins, I recommend the Adafruit MIDI featherwing or hardwiring the MIDI circuits for the arduino-uno
+- branch. https://learn.adafruit.com/adafruit-midi-featherwing/overview OR https://n-audio.net/designing-midi-in-and-midi-out-schematics/ *
 
 # Enjoy! :)

@@ -1,3 +1,19 @@
+/*
+  based on ,and heavily modified from, the original source from https://github.com/DieterVDW/arduino-midi-clock
+  by DieterVDW. This version is distributed under an MIT licence or under no stated licence (as per DieterVDW's
+  original code), depending on which has priority in your jurisdiction. I figure licencing this modified version
+  clarifies that the original is shared freely on an open, public web page and the original author concludes
+  their README.md with the phrase, "Enjoy! :)" indicating free use. If this interpretation is incorrect, I will
+  happily modify the licence to reflect DieterVDW's wishes.
+  My modifications will always be distributed under an MIT licence, with all such rates dated effectivel as per
+  the changelog. See LICENCE for details. No claims nor warranty are made for the reliability of my modifications
+  are implied, nor should be inferred.
+  Cheers,
+  Crunchysteve,
+  Melbourne,
+  Australia
+*/
+
 #include <TimerOne.h>
 #include <SoftwareSerial.h>  //  added by crunchysteve
 

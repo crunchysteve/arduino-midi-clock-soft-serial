@@ -1,4 +1,5 @@
 #include <TimerOne.h>
+#include <SoftwareSerial.h>  //  added by crunchysteve
 
 /*
  * For all features: if you do not define the pin, the feature will be disabled!
@@ -16,14 +17,14 @@
 /*
  * FEATURE: DIMMER BPM INPUT
  */
-// #define DIMMER_INPUT_PIN A0
+// #define DIMMER_INPUT_PIN A2  //  altenatove dimmer method, pin changed by crunchysteve
 
 #define DIMMER_CHANGE_MARGIN 20 // Big value to make sure this doesn't interfere. Tweak as needed.
 
 /*
  * FEATURE: DIMMER BPM INCREASE/DECREASE
  */
-#define DIMMER_CHANGE_PIN A1
+#define DIMMER_CHANGE_PIN A0
 #define DEAD_ZONE 50
 #define CHANGE_THRESHOLD 5000
 #define RATE_DIVISOR 30
@@ -31,8 +32,8 @@
 /*
  * FEATURE: BLINK TEMPO LED
  */
-#define BLINK_OUTPUT_PIN 5
-#define BLINK_PIN_POLARITY 0  // 0 = POSITIVE, 255 - NEGATIVE
+#define BLINK_OUTPUT_PIN 13   //  pin changed from 5 to 13 for Uno/Nano by crunchysteve
+#define BLINK_PIN_POLARITY 0  //   0 = POSITIVE, 255 - NEGATIVE
 #define BLINK_TIME 4 // How long to keep LED lit in CLOCK counts (so range is [0,24])
 
 /*
@@ -111,11 +112,17 @@ uint8_t tm1637_data[4] = {0x00, 0x00, 0x00, 0x00};
 long changeValue = 0;
 #endif
 
+const byte rxPin = 6;                    //  added by crunchysteve
+const byte txPin = 7;                    //  added by crunchysteve
+
+// Set up a new SoftwareSerial object    //  added by crunchysteve
+SoftwareSerial Serial1 (rxPin, txPin);   //  added by crunchysteve
+
 void setup() {
   Serial.begin(38400);
   //  Set MIDI baud rate:
-  Serial1.begin(31250);
-
+  Serial1.begin(31250);                  //  serial1 now on pins 6 & 7 - crunchysteve
+                                         //  no futher mods after this by crunchysteve, yet
   // Set pin modes
 #ifdef BLINK_OUTPUT_PIN
   pinMode(BLINK_OUTPUT_PIN, OUTPUT);
@@ -332,5 +339,4 @@ void setDisplayValue(int value) {
   display.setSegments(tm1637_data);
 }
 #endif
-
 

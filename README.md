@@ -2,12 +2,12 @@
 
 ### Forker's Note
 *A fork that has been modified to use SoftwareSerial.h, allowing it to run on Arduino Uno or Nano and still 
-allowing a debug console. MIDI In/Out are on Serial1, attached to pins 6 and 7, respectively. This modification 
-is not yet hardware tested but does compile without error, so have at iit. I'm also contemplating adding a 
-rotary encoder in parallel with tap tempo for specific tempo setting. I'm also considering upgrading the display 
-to an old LCD128x64 display I have left over from a dead Tronxy 3D printer. This has an SD card slot that could be 
-used as a MIDI logger/recorder by looping the MIDI out from the last device back to the clock's input. This last 
-feature may just be scope creep, so no promises there.*
+allow a debug console on Serial. MIDI In/Out are on Serial1, attached to pins 6 and 7, respectively. This 
+modification is not yet hardware tested but does compile without error, so have at iit. I'm also contemplating 
+adding a rotary encoder in parallel with tap tempo for specific tempo setting. I'm also considering upgrading the 
+display to an old LCD128x64 display I have left over from a dead Tronxy 3D printer. This has an SD card slot that 
+could be used as a MIDI logger/recorder by looping the MIDI out from the last device back to the clock's input. 
+This last feature may just be scope creep, so no promises there.*
 
 **Italics below** *indicate changes I'll be making or are already made.*
 

@@ -11,7 +11,7 @@ feature may just be scope creep, so no promises there.*
 
 **Italics below** *indicate changes I'll be making or are already made.*
 
-### ~~ Original ~~ Readme (now with mods)
+### ~~&nbsp;Original&nbsp;~~ Readme (now with mods)
 As seen on LittleBits:
 https://classroom.littlebits.com/inventions/littlebits-arduino-midi-master-clock-with-tap-tempo
 
